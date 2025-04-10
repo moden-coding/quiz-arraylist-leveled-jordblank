@@ -26,6 +26,34 @@
 import java.util.*;
 public class App {
     public static void main(String[] args) throws Exception {
-        Scanner reader = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Integer> values = new ArrayList<>();
+
+        System.out.println("Enter you Student ID number: ");
+        while (true) {
+            int input = Integer.valueOf(scanner.nextLine());
+            if (input == -1) {
+                break;
+            }
+            if (values.contains(input)){
+                System.out.println("Enter a different value, ID number already exists");
+                System.out.println("Do you want to delete the existing value; enter yes or no");
+                boolean delete = Boolean.valueOf(scanner.nextLine());
+                if (delete = true){
+                    values.remove(input);
+                    System.out.println(values);
+                }
+                
+            }
+            values.add(input);
+            
+            
+        }
+        System.out.println("");
+        for (int i = 0; i < values.size(); i++) {
+            
+            System.out.println(values.get(i));
+        }
+    
     }
 }
